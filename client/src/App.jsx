@@ -4,8 +4,6 @@ import Login from "./components/Login";
 import AdminHome from "./pages/AdminHome";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const [isAuth, setIsAuth] = useState(false);
 
   console.log(isAuth);
@@ -13,7 +11,13 @@ function App() {
   return (
     // if user is not authenticated, display login
     // else, redirect to admin home page
-    <>{isAuth ? <AdminHome /> : <Login setIsAuth={setIsAuth} />}</>
+    <>
+      {isAuth ? (
+        <AdminHome setIsAuth={setIsAuth} />
+      ) : (
+        <Login setIsAuth={setIsAuth} />
+      )}
+    </>
   );
 }
 
