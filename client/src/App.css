@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+.login-container {
+  padding: 2rem;
+  margin: 2rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#emailInputLabel {
+  font-size: 0.75em;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#loginBtn {
+  margin-top: 10px;
+  width: 50%;
+  background: orange;
+  color: #242424;
+}
