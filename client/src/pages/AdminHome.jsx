@@ -5,6 +5,8 @@ import Nav from "../components/Nav";
 import Card from "../components/Card";
 import SeriesTable from "../components/tables/SeriesTable";
 import ManufacturerTable from "../components/tables/ManufacturerTable";
+import TeamsTable from "../components/tables/TeamsTable";
+import DriversTable from "../components/tables/DriversTable";
 
 // home page for the app
 // will show nav bar
@@ -41,6 +43,14 @@ function AdminHome(props) {
 
     if (display === "manufacturers") {
       return <ManufacturerTable />;
+    }
+
+    if (display === "teams") {
+      return <TeamsTable />;
+    }
+
+    if (display === "drivers") {
+      return <DriversTable />;
     }
   };
 

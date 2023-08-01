@@ -48,10 +48,12 @@ const db = {
   teams: [
     {
       name: "Stewart Haas Racing",
+      manufacturer: "Ford",
       id: 1,
     },
     {
       name: "Hendrick Motorsports",
+      manufacturer: "Chevrolet",
       id: 2,
     },
   ],

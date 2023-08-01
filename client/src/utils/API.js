@@ -26,4 +26,14 @@ export default {
   getManufacturers: () => {
     return db.manufacturers;
   },
+
+  // get teams data
+  getTeams: () => {
+    return db.teams;
+  },
+
+  // get all drivers
+  getAllDrivers: () => {
+    return db.drivers;
+  },
 };
