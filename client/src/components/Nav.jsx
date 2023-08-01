@@ -6,6 +6,14 @@ function Nav(props) {
           <p>Admin Panel</p>
         </div>
         <div className="logout-wrapper">
+          <button
+            id="homeBtn"
+            onClick={() => {
+              props.setDisplay("home");
+            }}
+          >
+            Home
+          </button>
           <button id="logoutBtn" onClick={props.handleLogout}>
             Logout
           </button>

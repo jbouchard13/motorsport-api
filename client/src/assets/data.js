@@ -8,21 +8,51 @@ const db = {
       wins: 3,
       team: "Stewart Haas Racing",
       series: "Nascar Cup Series",
+      id: 1,
+    },
+    {
+      name: "Aric Almirola",
+      age: 38,
+      carNumber: 10,
+      manufacturer: "Ford",
+      wins: 3,
+      team: "Stewart Haas Racing",
+      series: "Nascar Cup Series",
+      id: 2,
     },
   ],
   series: [
     {
-      name: "Nascar Cup Series",
+      title: "Nascar Cup Series",
+      id: 2,
+    },
+    {
+      title: "Nascar Xfinity Series",
+      id: 1,
     },
   ],
   manufacturers: [
     {
       name: "Ford",
+      id: 1,
+    },
+    {
+      name: "Chevrolet",
+      id: 2,
+    },
+    {
+      name: "Toyota",
+      id: 3,
     },
   ],
   teams: [
     {
       name: "Stewart Haas Racing",
+      id: 1,
+    },
+    {
+      name: "Hendrick Motorsports",
+      id: 2,
     },
   ],
 };

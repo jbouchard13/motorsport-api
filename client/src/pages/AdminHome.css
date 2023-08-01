@@ -17,17 +17,21 @@
 .logout-wrapper {
   padding-right: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-#logoutBtn {
+#logoutBtn,
+#homeBtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 75%;
   background: orange;
   color: #242424;
+  width: 75px;
+  align-items: center;
+  margin: 5px;
 }
 
 main {

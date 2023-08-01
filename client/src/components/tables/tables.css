@@ -1,0 +1,32 @@
+table {
+  color: red;
+  width: 100%;
+  border: solid 1px white;
+}
+
+tr {
+  border: solid 1px white;
+}
+
+th,
+td {
+  border: solid 1px white;
+}
+#name {
+  width: 66%;
+}
+.table-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-btn {
+  background: white;
+}
+
+.table-btns button {
+  background: orange;
+  color: #242424;
+  width: 50%;
+  margin: 2px;
+}

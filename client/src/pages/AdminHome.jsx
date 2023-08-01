@@ -1,7 +1,10 @@
 import { useState } from "react";
-import db from "../assets/data";
-import Nav from "../components/Nav";
 import "./AdminHome.css";
+
+import Nav from "../components/Nav";
+import Card from "../components/Card";
+import SeriesTable from "../components/tables/SeriesTable";
+import ManufacturerTable from "../components/tables/ManufacturerTable";
 
 // home page for the app
 // will show nav bar
@@ -11,38 +14,54 @@ import "./AdminHome.css";
 
 function AdminHome(props) {
   const [tableInfo, setTableInfo] = useState([]);
+  // handles which form will be displayed when clicked
+  const [display, setDisplay] = useState("home");
+  const [displayData, setDisplayData] = useState([]);
 
-  // handles if the user wants to go back to the default admin page
-  const [home, setHome] = useState(true);
+  console.log(display);
+  const cards = ["Series", "Manufacturers", "Teams", "Drivers"];
 
   const handleLogout = () => {
     props.setIsAuth(false);
   };
+
+  const handleEdit = (data) => {
+    console.log("editing" + data);
+  };
+
+  const handleDelete = (data) => {
+    console.log("deleting" + data);
+  };
+
+  const renderTable = (display) => {
+    console.log(display);
+    if (display === "series") {
+      return <SeriesTable />;
+    }
+
+    if (display === "manufacturers") {
+      return <ManufacturerTable />;
+    }
+  };
+
   return (
     <>
-      <Nav handleLogout={handleLogout} />
+      <Nav handleLogout={handleLogout} setDisplay={setDisplay} />
       <main>
         <div className="header-wrapper">
           <h1>Motorsport Database Manager</h1>
           <p>Select a card to view</p>
         </div>
-        <div className="card-container">
-          <div id="seriesCard" className="card-wrapper">
-            <p>Series</p>
+        {/* display the default cards if on the home page */}
+        {display === "home" ? (
+          <div className="card-container">
+            {cards.map((card) => {
+              return <Card key={card} title={card} setDisplay={setDisplay} />;
+            })}
           </div>
-
-          <div id="manufacturersCard" className="card-wrapper">
-            <p>Manufacturers</p>
-          </div>
-
-          <div id="teamsCard" className="card-wrapper">
-            <p>Teams</p>
-          </div>
-
-          <div id="driversCard" className="card-wrapper">
-            <p>Drivers</p>
-          </div>
-        </div>
+        ) : (
+          renderTable(display)
+        )}
       </main>
     </>
   );
