@@ -1,3 +1,5 @@
+require("dotenv").config();
+const db = require("./models");
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -11,6 +13,19 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.listen(PORT, () => {
-  console.log("App now listening on port" + ":" + PORT);
-});
+const connect = async () => {
+  // attempt to connect to the db
+  try {
+    await db.authenticate();
+    console.log("Connection has been established successfully.");
+    // once db connection is established, fire up the server
+    app.listen(PORT, () => {
+      console.log("App now listening on port" + ":" + PORT);
+    });
+    // display the error if unable to connect to db
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+};
+
+connect();
